@@ -43,7 +43,8 @@ const login = async (req, res) => {
   res.status(StatusCodes.OK).json({ user: { name: user.username }, token });
 };
 const token = async (req, res) => {
-  const decoded = jwt.verify(req.body.token, process.env.JWT_SECRET);
+  const jwts = "/B?E(G+KbPeShVmYq3t6w9z$C&F)J@Mc";
+  const decoded = jwt.verify(req.body.token, jwts);
   const userId = decoded.userId;
   req.user = {
     userId: decoded.userId,

@@ -55,10 +55,12 @@ app.use("/uyeler", authRouter);
 app.use("/yazilar", articleRouter);
 app.use("/yorumlar", commentRouter);
 app.use("/tagler", tagRouter);
+const mng =
+  "mongodb+srv://mrthsn35:Hasan98965452@cluster0.y9xac9l.mongodb.net/taggy?retryWrites=true&w=majority";
 const port = process.env.PORT || 3000;
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(mng);
     app.listen(port, () => console.log(`listening on port ${port}`));
   } catch (error) {
     console.log(error);
